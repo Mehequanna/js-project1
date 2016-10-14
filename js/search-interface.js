@@ -1,13 +1,15 @@
 var Search = require('./../js/search.js').searchModule;
 
 var printDetails = function(avatar_url, name, login, html_url, location, public_repos, followers) {
-  $('#userDetails').html(
-    '<a href="'+html_url+'"><img src="'+avatar_url+'" alt="User Avatar" id="userImage" /></a>'+
-    '<h2>'+name+'</h2>' +
-    '<h4>'+login+'</h4>' +
-    '<h4>'+location+'</h4>' +
-    '<h5>'+public_repos+' repos</h5>' +
-    '<h5>'+followers+' followers</h5>'
+  $('#Details').html(
+    '<div id="userDetails">'+
+      '<a href="'+html_url+'"><img src="'+avatar_url+'" alt="User Avatar" id="userImage" /></a>'+
+      '<h2>'+name+'</h2>' +
+      '<h4>'+login+'</h4>' +
+      '<h4>'+location+'</h4>' +
+      '<h5>'+public_repos+' repos</h5>' +
+      '<h5>'+followers+' followers</h5>'+
+    '</div>'
   );
 };
 
@@ -22,14 +24,18 @@ var printRepos = function(name, html_url, description, language){
 };
 
 var detailsError = function() {
-  $('#userDetails').html(
-    '<h2>Sorry, username not found!</h2>'
+  $('#Details').html(
+    '<div id="userDetails">'+
+      '<h2>Sorry, username not found!</h2>'+
+    '</div>'
   );
 };
 
 var reposError = function() {
   $('#userRepos').html(
-    '<h4>Sorry, no repos found!</h4>'
+    '<div class="userRepo">'+
+      '<h4>Sorry, no repos found!</h4>'+
+    '</div>'
   );
 };
 
