@@ -14,7 +14,7 @@ var printDetails = function(avatar_url, name, login, html_url, location, public_
 var printRepos = function(name, html_url, description, language){
   $('#userRepos').append(
     '<div class="userRepo col-sm-4">'+
-      '<a href="'+html_url+'"><h3>'+name+'</h3></a>'+
+      '<a href="'+html_url+'"><h4>'+name+'</h4></a>'+
       '<h5>Description:</h5><p>'+description+'</p>'+
       '<h5>Most Used Langauge:</h5><p>'+language+'</p>'+
     '</div>'
