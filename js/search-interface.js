@@ -21,14 +21,20 @@ var printRepos = function(name, html_url, description, language){
   );
 };
 
+var detailsError = function() {
+  $('#userDetails').html(
+    '<h2>Sorry, Username not found!</h2>'
+  );
+};
+
 $(document).ready(function() {
   var newSearch = new Search();
 
   $('#searchButton').click(function(event){
     event.preventDefault();
     var username = $('#username').val();
-
-    newSearch.getDetails(username, printDetails);
+    // add children remove function
+    newSearch.getDetails(username, printDetails, detailsError);
     newSearch.getRepos(username, printRepos);
   });
 });
