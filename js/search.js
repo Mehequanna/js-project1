@@ -8,14 +8,7 @@ function Search() {
 Search.prototype.getDetails = function (username, printDetails) {
   $.get('https://api.github.com/users/'+username+'?access_token=' + apiKey).then(function(response){
     console.log(response);
-    printDetails(response.name);
-    console.log(response.name);
-    console.log(response.login);
-    console.log(response.html_url);
-    console.log(response.location);
-    console.log(response.public_repos);
-    console.log(response.repos_url);
-    console.log(response.followers);
+    printDetails(response.avatar_url, response.name, response.login, response.html_url, response.location, response.public_repos, response.repos_url, response.followers);
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });
