@@ -5,18 +5,18 @@ var printDetails = function(avatar_url, name, login, html_url, location, public_
     '<a href="'+html_url+'"><img src="'+avatar_url+'" alt="User Avatar" id="userImage" /></a>'+
     '<h2>'+name+'</h2>' +
     '<h4>'+login+'</h4>' +
-    '<h4>Located in: '+location+'</h4>' +
-    '<h5>Total repos: '+public_repos+'</h5>' +
-    '<h5># of Followers: '+followers+'</h5>'
+    '<h4>'+location+'</h4>' +
+    '<h5>'+public_repos+' repos</h5>' +
+    '<h5>'+followers+' followers</h5>'
   );
 };
 
 var printRepos = function(name, html_url, description, language){
   $('#userRepos').append(
-    '<div class="userRepo">'+
+    '<div class="userRepo col-sm-4">'+
       '<a href="'+html_url+'"><h3>'+name+'</h3></a>'+
-      '<h4>Description: '+description+'</h4>'+
-      '<h4>Most Used Langauge: '+language+'</h4>'+
+      '<h5>Description:</h5><p>'+description+'</p>'+
+      '<h5>Most Used Langauge:</h5><p>'+language+'</p>'+
     '</div>'
   );
 };
