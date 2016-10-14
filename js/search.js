@@ -14,7 +14,7 @@ Search.prototype.getDetails = function (username, printDetails, detailsError) {
   });
 };
 
-Search.prototype.getRepos = function (username, printRepos) {
+Search.prototype.getRepos = function (username, printRepos, reposError) {
   $.get('https://api.github.com/users/'+username+'/repos?access_token=' + apiKey).then(function(response){
     console.log(response);
     for (var repo of response) {
@@ -23,6 +23,7 @@ Search.prototype.getRepos = function (username, printRepos) {
     }
   }).fail(function(error){
     console.log(error.responseJSON.message);
+    reposError();
   });
 };
 

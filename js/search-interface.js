@@ -1,7 +1,7 @@
 var Search = require('./../js/search.js').searchModule;
 
 var printDetails = function(avatar_url, name, login, html_url, location, public_repos, repos_url, followers) {
-  $('#userDetails').append(
+  $('#userDetails').html(
     '<a href="'+html_url+'"><img src="'+avatar_url+'" alt="User Avatar" id="userImage" /></a>'+
     '<h2>'+name+'</h2>' +
     '<h4>'+login+'</h4>' +
@@ -12,7 +12,7 @@ var printDetails = function(avatar_url, name, login, html_url, location, public_
 };
 
 var printRepos = function(name, html_url, description, language){
-  $('#userDetails').append(
+  $('#userRepos').append(
     '<div class="userRepo">'+
       '<a href="'+html_url+'"><h3>'+name+'</h3></a>'+
       '<h4>Description: '+description+'</h4>'+
@@ -23,7 +23,13 @@ var printRepos = function(name, html_url, description, language){
 
 var detailsError = function() {
   $('#userDetails').html(
-    '<h2>Sorry, Username not found!</h2>'
+    '<h2>Sorry, username not found!</h2>'
+  );
+};
+
+var reposError = function() {
+  $('#userRepos').html(
+    '<h4>Sorry, no repos found!</h4>'
   );
 };
 
@@ -35,6 +41,6 @@ $(document).ready(function() {
     var username = $('#username').val();
     // add children remove function
     newSearch.getDetails(username, printDetails, detailsError);
-    newSearch.getRepos(username, printRepos);
+    newSearch.getRepos(username, printRepos, reposError);
   });
 });
