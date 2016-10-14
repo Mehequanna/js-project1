@@ -7,6 +7,7 @@ $(document).ready(function() {
     event.preventDefault();
     var username = $('#username').val();
 
+    newSearch.getDetails(username);
     newSearch.getRepos(username);
   });
 });
