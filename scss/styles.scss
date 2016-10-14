@@ -3,15 +3,45 @@
 // #userDetails
 // #userRepos
 
-$darkTeal : #006B6B;
-$teal : #009999;
-$cyan : #80FFFE;
-$lightCyan : #BFFFFE;
+$darkTeal : rgb(0,128,128);
+$darkCyan : rgb(0,139,139);
+$lightCyan : rgb(0,255,255);
+$background : rgba(150,255,255,.8);
+$black : rgb(0, 0, 0);
 
 
 body {
-  background: $darkTeal;
+  background-color: $darkTeal;
   background: url(../../img/bg.jpg) ;
   background-size:cover;
   background-attachment: fixed;
+  text-shadow: 1px 1px 0px rgb(0,128,128);
+  .well, #search, #userDetails, .userRepo {
+    color: $black;
+    border: 1px solid $darkTeal;
+    background-color: $background;
+  }
+  #search, #userDetails{
+    padding: 10px 0 0;
+    margin-bottom: 15px;
+  }
+  #userDetails, #userRepos{
+    width: 75%;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .userRepo{
+    height: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  a:link {
+    color: black;
+  }
+  img {
+    width: 30%;
+    border-radius: 70px;
+    border: 1px solid $darkTeal;
+  }
 }
