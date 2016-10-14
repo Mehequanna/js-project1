@@ -39,7 +39,7 @@ $(document).ready(function() {
   $('#searchButton').click(function(event){
     event.preventDefault();
     var username = $('#username').val();
-    // add children remove function
+    $('#userRepos').children().remove();
     newSearch.getDetails(username, printDetails, detailsError);
     newSearch.getRepos(username, printRepos, reposError);
   });

@@ -16,9 +16,16 @@ Search.prototype.getDetails = function (username, printDetails, detailsError) {
 
 Search.prototype.getRepos = function (username, printRepos, reposError) {
   $.get('https://api.github.com/users/'+username+'/repos?access_token=' + apiKey).then(function(response){
-    console.log(response);
     for (var repo of response) {
-      printRepos(repo.name, repo.html_url, repo.description, repo.language);
+      var description = repo.description;
+      if (description === null) {
+        description = "No Description";
+      }
+      var language = repo.language;
+      if (language === null) {
+        language = "No Language";
+      }
+      printRepos(repo.name, repo.html_url, description, language);
       console.log(repo.created_at);
     }
   }).fail(function(error){
