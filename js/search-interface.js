@@ -1,5 +1,9 @@
 var Search = require('./../js/search.js').searchModule;
 
+var printDetails = function(name) {
+  $('#userDetails').html('<h2>'+name+'</h2>');
+};
+
 $(document).ready(function() {
   var newSearch = new Search();
 
@@ -7,7 +11,7 @@ $(document).ready(function() {
     event.preventDefault();
     var username = $('#username').val();
 
-    newSearch.getDetails(username);
+    newSearch.getDetails(username, printDetails);
     newSearch.getRepos(username);
   });
 });

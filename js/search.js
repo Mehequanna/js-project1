@@ -5,9 +5,10 @@ var apiKey = require('./../.env').apiKey;
 function Search() {
 }
 
-Search.prototype.getDetails = function (username) {
+Search.prototype.getDetails = function (username, printDetails) {
   $.get('https://api.github.com/users/'+username+'?access_token=' + apiKey).then(function(response){
     console.log(response);
+    printDetails(response.name);
     console.log(response.name);
     console.log(response.login);
     console.log(response.html_url);
