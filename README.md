@@ -13,11 +13,7 @@ To use the code, you can clone the repository at: [https://github.com/mehequanna
 * $ cd js-project1
 
 ##NPM and Bower Dependency Installation
-* In terminal and the project directory, run: $ npm init
-* Press enter through all the prompts.
-* Then run: $ bower init
-* Press enter through all the prompts.
-* Then run: $ npm install -1.
+* In terminal and the project directory, run: $ npm install
 * Then run: $ bower install
 * Save your GitHub APIKey in the .env file (See below)
 * Finally run: $ gulp serve
