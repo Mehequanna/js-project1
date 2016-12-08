@@ -4,6 +4,8 @@ Github User Lookup
 ## Features
 This app will allow the user to search a name in github and return that username's details.
 
+![screenshot of project](github.png)
+
 ##Technologies
 JavaScript/JQuery, CSS/SASS, Node JS, NPM, Gulp, Bower, GitHub API
 
